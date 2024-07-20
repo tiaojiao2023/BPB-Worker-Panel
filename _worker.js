@@ -1,7 +1,7 @@
 // @ts-nocheck
 // <!--GAMFC-->version base on commit 43fad05dcdae3b723c53c226f8181fc5bd47223e, time is 2023-06-22 15:20:02 UTC<!--GAMFC-END-->.
 // @ts-ignore
-// https://github.com/bia-pain-bache/BPB-Worker-Panel
+// https://github.com/bia-pain-bache/BPB-Worker-Panel 
 
 import { connect } from 'cloudflare:sockets';
 
@@ -9,16 +9,16 @@ import { connect } from 'cloudflare:sockets';
 // https://www.uuidgenerator.net/
 let userID = '89b3cbba-e6ac-485a-9481-976a0415eab9';
 
-// https://www.nslookup.io/domains/cdn.xn--b6gac.eu.org/dns-records/
-// https://www.nslookup.io/domains/cdn-all.xn--b6gac.eu.org/dns-records/
+// https://www.nslookup.io/domains/cdn.xn--b6gac.eu.org/dns-records/  
+// https://www.nslookup.io/domains/cdn-all.xn--b6gac.eu.org/dns-records/ 
 const proxyIPs= ['cdn.xn--b6gac.eu.org', 'cdn-all.xn--b6gac.eu.org', 'edgetunnel.anycast.eu.org'];
 
-const defaultHttpPorts = ['80', '8080', '2052', '2082', '2086', '2095', '8880'];
+const defaultHttpPorts = ['80', '8080', '2052', '2082', '2086', '2095', '8880'];  
 const defaultHttpsPorts = ['443', '8443', '2053', '2083', '2087', '2096'];
 
-let proxyIP = proxyIPs[Math.floor(Math.random() * proxyIPs.length)];
+let proxyIP = proxyIPs[Math.floor(Math.random() * proxyIPs.length)]; 
 
-let dohURL = 'https://cloudflare-dns.com/dns-query';
+let dohURL = 'https://cloudflare-dns.com/dns-query';  
 
 let panelVersion = '2.4.5';
 
@@ -29,7 +29,7 @@ if (!isValidUUID(userID)) {
 export default {
     /**
      * @param {import("@cloudflare/workers-types").Request} request
-     * @param {{UUID: string, PROXYIP: string, DNS_RESOLVER_URL: string}} env
+     * @param {{UUID: string, PROXYIP: string, DNS_RESOLVER_URL: string}} env 
      * @param {import("@cloudflare/workers-types").ExecutionContext} ctx
      * @returns {Promise<Response>}
      */
@@ -39,7 +39,7 @@ export default {
             userID = env.UUID || userID;
             proxyIP = env.PROXYIP || proxyIP;
             dohURL = env.DNS_RESOLVER_URL || dohURL;
-            const upgradeHeader = request.headers.get('Upgrade');
+            const upgradeHeader = request.headers.get('Upgrade'); 
             
             if (!upgradeHeader || upgradeHeader !== 'websocket') {
                 
@@ -54,14 +54,14 @@ export default {
                         return new Response(JSON.stringify(request.cf, null, 4), {
                             status: 200,
                             headers: {
-                                'Content-Type': 'application/json;charset=utf-8',
+                                'Content-Type': 'application/json;charset=utf-8'， 
                             },
                         });
                         
                     case `/sub/${userID}`:
 
                         if (client === 'sfa') {
-                            const BestPingSFA = await getSingboxConfig(env, host);
+                            const BestPingSFA = await getSingboxConfig(env, host); 
                             return new Response(`${JSON.stringify(BestPingSFA, null, 4)}`, { status: 200 });                            
                         }
                         const normalConfigs = await getNormalConfigs(env, host, client);
@@ -112,7 +112,7 @@ export default {
                                 'Access-Control-Allow-Methods': 'GET, POST',
                                 'Access-Control-Allow-Headers': 'Content-Type, Authorization',
                                 'X-Content-Type-Options': 'nosniff',
-                                'X-Frame-Options': 'DENY',
+                                'X-Frame-Options': 'DENY', 
                                 'Referrer-Policy': 'strict-origin-when-cross-origin'
                             }
                         });
@@ -198,15 +198,15 @@ export default {
                             }
                         });
 
-                    default:
-                        // return new Response('Not found', { status: 404 });
-                        url.hostname = 'www.speedtest.net';
+                    default: 
+                        return new Response('Not found', { status: 404 }); 
+                        url.hostname = 'www.speedtest.net';  
                         url.protocol = 'https:';
-                        request = new Request(url, request);
+                        request = new Request(url, request); 
                         return await fetch(request);
                 }
             } else {
-                return await vlessOverWSHandler(request);
+                return await vlessOverWSHandler(request); 
             }
         } catch (err) {
             /** @type {Error} */ let e = err;
